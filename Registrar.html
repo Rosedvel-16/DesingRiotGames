@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registrar Clientes - Riot Style</title>
+    <link href="estiloRegistrar.css" rel="stylesheet">
+    <link href="imagenes/fondoInicio.jpg" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="imagenes/logo.jpg" alt="Riot Games Logo" />
+        <h1>Registrar Cliente</h1>
+        <form id="clienteForm">
+            <label for="nombre">Nombre de Invocador</label>
+            <input type="text" id="nombre" name="nombre" placeholder="EJ. Siccha011" required />
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="sucorreo@gmail.com" required />
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="‪+51 912345678‬" required />
+
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required />
+
+            <button type="submit">Registrar</button>
+
+            <p class="success-message" id="successMessage">¡Cliente registrado con éxito!</p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('clienteForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            successMessage.style.display = 'block';
+
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                form.reset();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

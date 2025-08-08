@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports | RIOT GAMES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="estiloE-Sports.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RIOT GAMES</div>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Riot Games</button>
+                <div class="dropdown-content">
+                    <a href="#">Merchandising</a>
+                    <a href="#">Soporte</a>
+                    <a href="conocenos.html">Conócenos</a>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <a href="InicioSesion.html" class="login-btn">Iniciar Sesion</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="esports-hero">
+            <div class="hero-content">
+                <h1>RIOT <span>ESPORTS</span></h1>
+                <p>Vive la emoción de la competición profesional</p>
+                <div class="hero-buttons">
+                    <a href="#calendario" class="cta-btn">CALENDARIO</a>
+                    <a href="#equipos" class="cta-btn secondary">EQUIPOS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Torneos Destacados -->
+        <section class="featured-tournaments" id="torneos">
+            <h2>Torneos <span>Destacados</span></h2>
+            <div class="tournaments-grid">
+                <div class="tournament-card">
+                    <img src="imagenes/Words2025.jpg" alt="LOL Worlds">
+                    <div class="tournament-info">
+                        <h3>WORLDS 2025</h3>
+                        <p>July 16 - July 17</p>
+                        <span class="live-badge">PROXIMAMENTE</span>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <img src="imagenes/Champions Valorant.jpg" alt="Valorant Champions">
+                    <div class="tournament-info">
+                        <h3>VALORANT CHAMPIONS</h3>
+                        <p>Sep 12 - Oct 5</p>
+                        <span class="soon-badge">PRÓXIMAMENTE</span>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <img src="imagenes/TFTParis.png" alt="TFT Championship">
+                    <div class="tournament-info">
+                        <h3>TFT CHAMPIONSHIP</h3>
+                        <p>July 1 - Ago 1</p>
+                        <span class="soon-badge">PRÓXIMAMENTE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section class="top-teams" id="equipos">
+    <h2>Equipos <span>Top</span></h2>
+    <div class="teams-carousel">
+        <!-- League of Legends -->
+        <div class="team-card">
+            <img src="imagenes/t1.jpg" alt="T1" class="team-logo">
+            <h3>T1</h3>
+            <p>League of Legends</p>
+            <div class="team-players">
+                <span>Zeus</span>
+                <span>Oner</span>
+                <span>Faker</span>
+                <span>Gumayusi</span>
+                <span>Keria</span>
+            </div>
+            <div class="team-trophies">🏆 Worlds 2023</div>
+        </div>
+
+        <div class="team-card">
+            <img src="imagenes/g2.jpeg" alt="G2 Esports" class="team-logo">
+            <h3>G2 Esports</h3>
+            <p>League of Legends</p>
+            <div class="team-players">
+                <span>BrokenBlade</span>
+                <span>Yike</span>
+                <span>Caps</span>
+                <span>Hans Sama</span>
+                <span>Mikyx</span>
+            </div>
+            <div class="team-trophies">🏆 LEC 2024</div>
+        </div>
+
+        <!-- Valorant -->
+        <div class="team-card">
+            <img src="imagenes/sentinels.jpg" alt="Sentinels" class="team-logo">
+            <h3>Sentinels</h3>
+            <p>Valorant</p>
+            <div class="team-players">
+                <span>TenZ</span>
+                <span>Zekken</span>
+                <span>Zellsis</span>
+                <span>Sacy</span>
+                <span>johnqt</span>
+            </div>
+            <div class="team-trophies">🏆 VCT Americas</div>
+        </div>
+
+        <div class="team-card">
+            <img src="imagenes/FnaticEquipo.jpg" alt="Fnatic" class="team-logo">
+            <h3>Fnatic</h3>
+            <p>Valorant</p>
+            <div class="team-players">
+                <span>Derke</span>
+                <span>Alfajer</span>
+                <span>Leo</span>
+                <span>Boaster</span>
+                <span>Chronicle</span>
+            </div>
+            <div class="team-trophies">🏆 VCT 2023</div>
+        </div>
+
+        <!-- Wild Rift -->
+        <div class="team-card">
+            <img src="imagenes/jTeam.jpg" alt="J Team" class="team-logo">
+            <h3>J Team</h3>
+            <p>Wild Rift</p>
+            <div class="team-players">
+                <span>Haka</span>
+                <span>Star</span>
+                <span>Xiao</span>
+                <span>Benny</span>
+                <span>Lit</span>
+            </div>
+            <div class="team-trophies">🏆 WRL Champions</div>
+        </div>
+
+        </div>
+    </section>
+<!-- CALENDARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
+    <section class="schedule" id="calendario">
+        <h2>Calendario <span>Competitivo</span></h2>
+        <div class="schedule-table">
+        <div class="schedule-header">
+            <div>Fecha</div>
+            <div>Torneo</div>
+            <div>Juego</div>
+            <div>Ubicación</div>
+            <div>Estado</div>
+        </div>
+        
+        <!-- League of Legends -->
+        <div class="schedule-item">
+            <div>Ene 13 - Mar 31</div>
+            <div>LEC Winter Split</div>
+            <div><img src="imagenes/LOLlogo.jpg" alt="LoL"> LoL</div>
+            <div>Berlín, Alemania</div>
+            <div class="status completed">Finalizado</div>
+        </div>
+        
+        <div class="schedule-item">
+            <div>Abr 6 - Abr 14</div>
+            <div>LEC Spring Finals</div>
+            <div><img src="imagenes/LOLlogo.jpg" alt="LoL"> LoL</div>
+            <div>Montpellier, Francia</div>
+            <div class="status completed">Finalizado</div>
+        </div>
+        
+        <div class="schedule-item highlight">
+            <div>May 1 - May 19</div>
+            <div>Mid-Season Invitational</div>
+            <div><img src="imagenes/LOLlogo.jpg" alt="LoL"> LoL</div>
+            <div>Chengdú, China</div>
+            <div class="status live">En Curso</div>
+        </div>
+        
+        <!-- Valorant -->
+        <div class="schedule-item">
+            <div>Jun 1 - Jun 23</div>
+            <div>VCT Masters Madrid</div>
+            <div><img src="imagenes/vallogo.png" alt="Valorant"> Valorant</div>
+            <div>Madrid, España</div>
+            <div class="status upcoming">Próximamente</div>
+        </div>
+        
+        <div class="schedule-item">
+            <div>Jul 4 - Jul 7</div>
+            <div>VALORANT Champions Tour</div>
+            <div><img src="imagenes/vallogo.png" alt="Valorant"> Valorant</div>
+            <div>Seúl, Corea</div>
+            <div class="status upcoming">Próximamente</div>
+        </div>
+        
+        <!-- Wild Rift -->
+        <div class="schedule-item">
+            <div>Ago 15 - Ago 18</div>
+            <div>Wild Rift Championship</div>
+            <div><img src="imagenes/wildLogo.jpg" alt="Wild Rift"> Wild Rift</div>
+            <div>Singapur</div>
+            <div class="status upcoming">Próximamente</div>
+        </div>
+        
+        <!-- Evento destacado -->
+        <div class="schedule-item highlight">
+            <div>Sep 25 - Nov 2</div>
+            <div>Worlds 2024</div>
+            <div><img src="imagenes/LOLlogo.jpg" alt="LoL"> LoL</div>
+            <div>Londres, UK</div>
+            <div class="status upcoming">Próximamente</div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <p>© 2023 RIOT GAMES ESPORTS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="esports.js"></script>
+</body>
+</html>

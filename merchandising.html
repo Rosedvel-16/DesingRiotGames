@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Riot Games Merch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* Reset y base */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #eee;
+            overflow-x: hidden;
+        }
+
+        /* Fondo con imagen */
+        body::before {
+            content: '';
+            background-image: url('https://displays.riotgames.com/static/content-original-runeterra-ionia-3af5494dd645cb673dc4cedc2d3458b1.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #e50914, #ff6600);
+            padding: 50px 20px 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 80, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 12px;
+        }
+
+        .cart-status {
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #ff4d00;
+            user-select: none;
+        }
+
+        /* Contenedor principal */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Secciones con títulos */
+        h2.section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.4rem;
+            color: #ff4d00;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #ff4d00;
+            padding-bottom: 6px;
+            text-align: center;
+            text-shadow: 0 0 6px rgba(255, 77, 0, 0.7);
+        }
+
+        /* Grid para productos y tarjetas */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            justify-items: center;
+        }
+
+        /* Card producto/tarjeta */
+        .product {
+            background: rgba(25, 25, 25, 0.95);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 8px 20px rgba(255, 77, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .product:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.6);
+        }
+
+        /* Imagen */
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-bottom: 2px solid #ff4d00;
+            transition: transform 0.4s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.07);
+        }
+
+        /* Contenido */
+        .product-content {
+            padding: 18px 15px 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-content h3 {
+            margin: 0 0 8px;
+            font-size: 1.25rem;
+            color: #ff5722;
+            text-shadow: 0 0 8px #ff5722;
+        }
+
+        .product-content p {
+            margin: 0 0 16px;
+            color: #bbb;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Botón */
+        .product-content button {
+            background: linear-gradient(90deg, #ff4d00, #e50914);
+            color: white;
+            border: none;
+            padding: 12px 0;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(255, 77, 0, 0.7);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .product-content button:hover {
+            background: linear-gradient(90deg, #e50914, #ff6600);
+            box-shadow: 0 6px 18px rgba(255, 102, 0, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 28px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            user-select: none;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            h2.section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🔥 Riot Games Merch Store 🔥</h1>
+        <p>Explora artículos épicos de League of Legends, Valorant y más</p>
+        <div class="cart-status">🛒 Carrito: <span id="cartCount">0</span> productos</div>
+    </header>
+
+    <main>
+        <!-- Productos -->
+        <h2 class="section-title">Artículos Disponibles</h2>
+        <section class="products" id="productList"></section>
+
+        <!-- Tarjetas de regalo -->
+        <h2 class="section-title">🎁 Tarjetas de Regalo</h2>
+        <section class="products" id="giftCardList"></section>
+    </main>
+
+    <footer>
+        &copy; 2025 Riot Games Fansite – Todos los derechos reservados
+    </footer>
+
+    <script>
+        const tarjetas = [
+            {
+                nombre: "Gift Card - $10 USD",
+                precio: 10.00,
+                imagen: "https://www.jbhifi.com.au/cdn/shop/products/620839-Product-0-I-638064366440721792.jpg?v=1670800287"
+            },
+            {
+                nombre: "Gift Card - $25 USD",
+                precio: 25.00,
+                imagen: "https://www.jbhifi.com.au/cdn/shop/products/620840-Product-0-I-638064370640742885.jpg?v=1670800766"
+            },
+            {
+                nombre: "Gift Card - $50 USD",
+                precio: 50.00,
+                imagen: "https://i5.walmartimages.com/seo/League-of-Legends-50-Gift-Card-Physical_5066320d-eabf-444c-8c9f-ef1790416f86.cfc91d7f988558d6f8d5ade7b0adb544.jpeg"
+            }
+        ];
+
+        const productos = [
+            {
+                nombre: "Figura de Jinx",
+                precio: 29.99,
+                imagen: "https://preview.redd.it/arcane-jinx-figure-is-so-cute-3-v0-93n8os6e43zd1.jpg?width=640&crop=smart&auto=webp&s=16307b11c83be329781573f841a7294daf5d5529"
+            },
+            {
+                nombre: "Sudadera Valorant",
+                precio: 49.99,
+                imagen: "https://ae01.alicdn.com/kf/S4443bdc3cda744799f54f5c9507bfd8dw.jpg"
+            },
+            {
+                nombre: "Peluca Ahri K/DA",
+                precio: 24.99,
+                imagen: "https://m.media-amazon.com/images/I/51d36-YmNSL._AC_UF1000,1000_QL80_.jpg"
+            },
+            {
+                nombre: "Gorra League of Legends",
+                precio: 19.99,
+                imagen: "https://pbs.twimg.com/media/D5kX_RfW0AApUQ2.jpg:large"
+            },
+            {
+                nombre: "Figura Zed edición limitada",
+                precio: 59.99,
+                imagen: "https://i.etsystatic.com/42648452/r/il/b61ec8/6402345484/il_fullxfull.6402345484_9nqj.jpg"
+            }
+        ];
+
+        const productList = document.getElementById('productList');
+        const giftCardList = document.getElementById('giftCardList');
+        const cartCount = document.getElementById('cartCount');
+        let carrito = [];
+
+        function crearCard(item) {
+            const card = document.createElement('div');
+            card.className = 'product';
+            card.innerHTML = `
+                <img src="${item.imagen}" alt="${item.nombre}" loading="lazy" />
+                <div class="product-content">
+                    <h3>${item.nombre}</h3>
+                    <p>Precio: $${item.precio.toFixed(2)}</p>
+                    <button onclick="agregarAlCarrito('${item.nombre}')">🛒 Comprar</button>
+                </div>
+            `;
+            return card;
+        }
+
+        productos.forEach(producto => {
+            productList.appendChild(crearCard(producto));
+        });
+
+        tarjetas.forEach(tarjeta => {
+            giftCardList.appendChild(crearCard(tarjeta));
+        });
+
+        function agregarAlCarrito(nombreProducto) {
+            carrito.push(nombreProducto);
+            cartCount.textContent = carrito.length;
+            alert(`Has agregado "${nombreProducto}" al carrito.`);
+        }
+    </script>
+</body>
+
+</html>

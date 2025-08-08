@@ -1,0 +1,211 @@
+/* Estilos específicos para login */
+.login-page {
+    background-image: url('imagenes/juegos\ combinados.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.login-container {
+    display: flex;
+    width: 900px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+.riot-logo {
+    width: 40%;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.riot-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    color: #fa380c;
+}
+
+.login-form {
+    width: 60%;
+    padding: 50px;
+}
+
+.login-form h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #fa380c;
+    text-transform: uppercase;
+}
+
+.login-url {
+    color: #888;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    font-family: 'Courier New', monospace;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #fa380c;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #fa380c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover */
+.btn-login:hover {
+    background-color: #e03108;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 56, 12, 0.4);
+}
+
+/* Efecto al hacer click */
+.btn-login:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(250, 56, 12, 0.4);
+}
+
+.login-message .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #4CAF50;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.register-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.register-section p {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.register-section span {
+    color: #fa380c;
+    cursor: pointer;
+}
+
+.btn-register {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: transparent;
+    color: #fa380c;
+    border: 1px solid #fa380c;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #fa380c;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .riot-logo, .login-form {
+        width: 100%;
+    }
+    
+    .riot-logo {
+        padding: 30px;
+    }
+    
+    .login-form {
+        padding: 30px;
+    }
+}
+
+.boton-inicio {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-volver {
+    background-color: #e10033; /* Rojo estilo Riot */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-volver:hover {
+    background-color: #c9002a;
+    transform: scale(1.05);
+}

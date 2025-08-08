@@ -1,0 +1,415 @@
+/* Botones del Hero */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-btn {
+    padding: 12px 30px;
+    background-color:transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: 2px solid #ff4655;
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: #ff4655;
+}
+
+.cta-btn:hover {
+    background-color: #e03108;
+    border-color: #e03108;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+}
+
+.cta-btn.secondary:hover {
+    background-color: rgba(255, 70, 85, 0.1);
+    color: white;
+}
+/* Estilos generales Esports */
+.esports-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('imagenes/fondoesports.jpg') center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.esports-hero h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.esports-hero h1 span {
+    color: #ff4655;
+    position: relative;
+}
+
+.esports-hero h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4655, transparent);
+}
+
+/* Torneos Destacados */
+.featured-tournaments {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.tournaments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tournament-card {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.tournament-card:hover {
+    transform: translateY(-10px);
+}
+
+.tournament-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tournament-info {
+    padding: 1.5rem;
+}
+
+.tournament-info h3 {
+    color: #ff4655;
+    margin-bottom: 0.5rem;
+}
+
+.live-badge, .soon-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.live-badge {
+    background-color: #ff4655;
+    color: white;
+}
+
+.soon-badge {
+    background-color: #ff8a00;
+    color: black;
+}
+
+
+/* Equipos Top - Versión Mejorada */
+.top-teams {
+    padding: 4rem 2rem;
+    background-color: #111;
+    position: relative;
+    text-align: center; /* Aseguramos centrado total */
+}
+
+.top-teams h2 {
+    
+    display: inline-block; /* Para que el pseudo-elemento no ocupe el 100% */
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 0 auto 3rem;
+    position: relative;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+
+.top-teams h2 span {
+    color: #ff4655;
+}
+
+/* Línea decorativa centrada */
+.top-teams h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff4655, transparent);
+    border-radius: 3px;
+}
+
+
+.teams-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #ff4655 #222;
+}
+
+.teams-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.teams-carousel::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+.teams-carousel::-webkit-scrollbar-thumb {
+    background-color: #ff4655;
+    border-radius: 10px;
+}
+
+.team-card {
+    min-width: 280px;
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(255, 70, 85, 0.2);
+    border-color: #ff4655;
+}
+
+.team-logo {
+    width: 280px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
+
+.team-card h3 {
+    color: #ff4655;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.team-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.team-players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.team-players span {
+    background-color: #333;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #ddd;
+}
+
+.team-trophies {
+    color: #ffd700;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Flechas de navegación (opcional) */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    pointer-events: all;
+    background: rgba(255,70,85,0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #ff4655;
+    transform: scale(1.1);
+}
+
+
+/* Calendario Competitivo */
+.schedule {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.schedule h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.schedule h2 span {
+    color: #ff4655;
+}
+
+.schedule-table {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.schedule-header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1.5fr 1fr;
+    background-color: #ff4655;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1.5fr 1fr;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.3s;
+}
+
+.schedule-item:hover {
+    background-color: #222;
+}
+
+.schedule-item img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.highlight {
+    background-color: rgba(255, 70, 85, 0.1);
+    border-left: 4px solid #ff4655;
+}
+
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status.completed {
+    background-color: #333;
+    color: #aaa;
+}
+
+.status.live {
+    background-color: #ff4655;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.status.upcoming {
+    background-color: #ff8a00;
+    color: black;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .schedule-header, 
+    .schedule-item {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "date game"
+            "tournament status"
+            "location location";
+        gap: 0.5rem;
+    }
+    
+    .schedule-header div:nth-child(1),
+    .schedule-item div:nth-child(1) {
+        grid-area: date;
+    }
+    
+    .schedule-header div:nth-child(2),
+    .schedule-item div:nth-child(2) {
+        grid-area: tournament;
+    }
+    
+    .schedule-header div:nth-child(3),
+    .schedule-item div:nth-child(3) {
+        grid-area: game;
+    }
+    
+    .schedule-header div:nth-child(4),
+    .schedule-item div:nth-child(4) {
+        grid-area: location;
+    }
+    
+    .schedule-header div:nth-child(5),
+    .schedule-item div:nth-child(5) {
+        grid-area: status;
+        text-align: right;
+    }
+}

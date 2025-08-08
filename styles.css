@@ -1,0 +1,912 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff4655;
+    margin-right: auto; /* Empuja todo lo demás a la derecha */
+}
+
+/* Nav principal */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 2rem; /* Espacio después del logo */
+}
+
+/* Contenedor de la derecha */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto; /* Empuja este grupo a la derecha */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-top: 2px solid #ff4655;
+    left: 0; /* Alinea con el botón */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #222;
+    color: #ff4655;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #222;
+    color: white;
+    min-width: 200px;
+}
+
+.search-container input:focus {
+    outline: none;
+    border: 1px solid #ff4655;
+}
+
+.login-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #e03108;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    nav, .header-right {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .search-container input {
+        width: 100%;
+    }
+}
+
+/* Seccion Juegos */
+.hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background-image: url('imagenes/fondoPrincipal.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: #ff4655;
+    text-shadow: 4px 4px 0 #000;
+    line-height: 1.3;
+    letter-spacing: 0;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.hero h1::before,
+.hero h1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #ff4655;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+}
+
+.games-grid {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 2rem; 
+    width: 70%;
+    margin: 0 auto;
+}
+
+.game-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(250, 56, 12, 0.6); /* Sombra roja al hacer hover */
+}
+.game-card img {
+    width: 100%;
+    height: auto;
+    max-width: 100PX;
+    display: block;
+    margin: 0 auto;
+}
+.game-card h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* News Section */
+.news {
+    padding: 4rem 2rem;
+}
+
+.news h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff4655;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    padding: 1rem 1rem 0;
+    color: #ff4655;
+}
+
+.news-card p {
+    padding: 0 1rem 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #111;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Estilos para el botón y nueva sección */
+.more-news {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.more-news-btn {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.more-news-btn:hover {
+    background-color: #e03108;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+}
+
+
+/* Estilo para la cuadrícula de juegos simple */
+/*TITULO JUEGOS*/
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.section-header h2 span {
+    color: #ff4655;
+    position: relative;
+}
+
+.section-header h2 span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4655, transparent);
+}
+
+.section-header .subtitle {
+    color: #aaa;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.games-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-feature {
+    display: flex;
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*TABLA JUEGOS*/
+.games-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.game-card-simple {
+    align-items: center; /*alineacion texto*/
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.game-card-simple:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+}
+
+.game-image-placeholder {
+    width: 100%;
+    height: 120px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.game-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-title-wrapper {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: #0a0a0a;
+}
+
+.ConoceMas-btn {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .games-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .games-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*.......................................BANNER SOPORTE........................................*/
+
+/* Banner de Soporte */
+.support-banner {
+    background: linear-gradient(135deg, #e1385d 0%, #e0b4cf 50%, #eb6a15 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.3);
+}
+
+.support-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.support-text h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.support-text p {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.support-btn {
+    background-color: #111;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.support-btn:hover {
+    background-color: white;
+    color: #f03131;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .support-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .support-text {
+        margin-bottom: 1.5rem;
+    }
+    
+    .support-btn {
+        padding: 10px 25px;
+    }
+}
+
+/*---------------------------------------  TABLAS --------------------------------------*/
+
+/* Sección de tablas de medios */
+.media-tables {
+    display: flex;
+    gap: 2rem;
+    max-width: 1800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.media-table {
+    flex: 1;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Tabla izquierda (Esports) */
+.esports-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.esports-table .media-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.esports-table img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.esports-table img:hover {
+    transform: scale(1.03);
+}
+
+/* Tabla derecha (Series + Música) */
+.content-table {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.media-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.content-table img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: all 0.3s;
+}
+
+.media-box:hover img {
+    filter: brightness(1);
+    transform: scale(1.1);
+}
+
+/* Botones */
+.media-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4655;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: none;
+    width: 100%;
+}
+
+.esports-table .media-btn {
+    margin-top: auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.content-table .media-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 0;
+}
+
+.media-btn:hover {
+    background-color: #e03108;
+    letter-spacing: 1px;
+}
+
+.media-btn i {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .media-tables {
+        flex-direction: column;
+    }
+    
+    .esports-table .media-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-table {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-table {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+/* Estilos del footer Riot */
+.riot-footer {
+  background-color: #111;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 0 0;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.riot-brand {
+  flex: 1;
+  min-width: 280px;
+}
+
+.riot-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.riot-mission {
+  color: #999;
+  font-style: italic;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.riot-games h4 {
+  color: #f0e6d2;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.game-icons a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.game-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.game-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section {
+  min-width: 160px;
+}
+
+.footer-section h4 {
+  color: #f0e6d2;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #d13639;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 12px;
+}
+
+.footer-section a {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #f0e6d2;
+}
+
+.footer-connect {
+  flex: 1;
+  min-width: 250px;
+}
+
+.region-selector {
+  display: flex;
+  align-items: center;
+  background: #1e282d;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.region-selector i {
+  color: #999;
+  margin-right: 10px;
+}
+
+#region-select {
+  background: transparent;
+  border: none;
+  color: #f0e6d2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+#region-select option {
+  background: #111;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1e282d;
+  color: #999;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #d13639;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-legal {
+  width: 100%;
+  background-color: #0a0a0a;
+  padding: 25px 0;
+  margin-top: 60px;
+}
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.legal-links a {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #f0e6d2;
+}
+
+.copyright {
+  text-align: center;
+  color: #666;
+  font-size: 0.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-container {
+    gap: 40px;
+  }
+  
+  .footer-sections {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-sections {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .region-selector {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+  
+  .legal-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
